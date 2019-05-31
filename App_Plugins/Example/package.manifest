@@ -1,0 +1,15 @@
+﻿{
+  //array of files we want to inject into the application on app_start
+  "propertyEditors": [
+      {
+        "alias": "CharLimit",
+        "name": "CharLimit",
+        "editor": {
+        "view": "~/App_Plugins/Example/charlimit.editor.html"
+        }
+      }
+  ],
+  "javascript": [
+    "~/App_Plugins/Example/charlimit.controller.js"
+  ]   
+}
