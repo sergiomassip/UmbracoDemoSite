@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<UmbracoDemoSite.Models.GenericGridPageViewModel>
+@{
+    ViewBag.Title = "GenericGridPage";
+}
+
+<h2>@Model.Content.PageTitle</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Origin) && !string.IsNullOrEmpty(ViewBag.Destination))
+{
+    <h2> Vuela de @ViewBag.Origin a @ViewBag.Destination </h2>
+}
+
+
+@Html.GetGridHtml(Model.Content, "bodyText", "bootstrap3-fluid")

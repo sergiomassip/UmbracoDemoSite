@@ -1,0 +1,30 @@
+﻿@model UmbracoDemoSite.Models.NavMenuViewModel
+@using UmbracoDemoSite.Models.Umbraco
+
+@if (Model != null)
+{
+    foreach (var category in Model.Categories)
+    {
+        <h2>@category.Name</h2>
+        <ul>
+            @{
+                IEnumerable<IPublishedContent> CategoryMenu = category.GetPropertyValue("categorymenu") as IEnumerable<IPublishedContent>;
+
+                foreach (IPublishedContent content in CategoryMenu)
+                {
+                    Umbraco.Web.Models.RelatedLinks link = content.GetPropertyValue("link") as Umbraco.Web.Models.RelatedLinks;
+
+                    if (link != null)
+                    {
+                        <li>
+                            <a href="@link.FirstOrDefault().Link" target="@link.FirstOrDefault().NewWindow"> @link.FirstOrDefault().Caption </a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    }
+}
+
+
+
