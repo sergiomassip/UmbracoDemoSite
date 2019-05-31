@@ -1,0 +1,18 @@
+﻿@model UmbracoDemoSite.Models.ContactFormViewModel
+
+<h2>Contact Form</h2>
+
+@using (Html.BeginUmbracoForm<UmbracoDemoSite.Controllers.ContactFormController>("HandleContactForm", "ContactForm", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <p>Your name: @Html.TextBoxFor(x => x.Name) </p>
+
+    <p>Your email: @Html.TextBoxFor(x => x.Email)</p>
+
+    <p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>
+
+    <p>Your message: @Html.TextAreaFor(x => x.Message)</p>
+
+    <input type="submit" value="Send"/>
+}

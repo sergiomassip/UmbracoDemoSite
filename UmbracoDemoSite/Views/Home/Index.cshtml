@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<UmbracoDemoSite.Models.HomeViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@Html.GetGridHtml(Model.Content,"bodyText", "bootstrap3-fluid")
