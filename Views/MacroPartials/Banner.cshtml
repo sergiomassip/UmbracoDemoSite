@@ -1,7 +1,0 @@
-﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
-@{
-    var Node = Model.MacroParameters["BannerId"].ToString();
-}
-
-
-@Html.Action("Index", "Banner", new { nodeId = Node })
